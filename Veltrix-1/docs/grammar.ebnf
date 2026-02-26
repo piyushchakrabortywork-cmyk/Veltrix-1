@@ -1,0 +1,59 @@
+program         ::= statement* EOF
+
+block           ::= statement* "End"
+property_block  ::= IDENTIFIER string_literal? "{" property* "}" ";"
+
+property        ::= IDENTIFIER ":" expression ","
+
+statement       ::= (
+                      let_decl | const_decl | write_stmt | ask_stmt
+                    | return_stmt | import_stmt | add_stmt | remove_stmt
+                    | assignment | expr_stmt
+                    ) ";"
+                  | if_stmt
+                  | while_stmt
+                  | for_stmt
+                  | function_decl
+                  | class_decl
+                  | match_stmt
+                  | try_stmt
+                  | property_block
+
+let_decl        ::= "Let" IDENTIFIER ( ":" IDENTIFIER )? "=" expression
+const_decl      ::= "Constant" IDENTIFIER "=" expression
+write_stmt      ::= "Write" expression
+ask_stmt        ::= "Ask" expression "Into" IDENTIFIER
+return_stmt     ::= "Return" expression?
+import_stmt     ::= "Import" string_literal
+add_stmt        ::= "Add" expression "to" IDENTIFIER
+remove_stmt     ::= "Remove" expression "from" IDENTIFIER
+assignment      ::= ( IDENTIFIER | member_access | index_access ) "=" expression
+expr_stmt       ::= expression
+
+if_stmt         ::= "If" expression block ( "Else" ( if_stmt | block ) )?
+while_stmt      ::= "While" expression block
+for_stmt        ::= "For" IDENTIFIER ( "in" expression | "from" expression "to" expression ( "step" expression )? ) block
+function_decl   ::= "Function" IDENTIFIER "(" param_list ")" ( ":" IDENTIFIER )? block
+class_decl      ::= "Class" IDENTIFIER function_decl* "End"
+match_stmt      ::= "Match" expression ( expression "to"? expression block | "Otherwise" block )* "End"
+try_stmt        ::= "Try" block "Catch" block
+
+expression      ::= logical_or
+logical_or      ::= logical_and ( "Or" logical_and )*
+logical_and     ::= equality ( "And" equality )*
+equality        ::= relational ( ( "==" | "!=" ) relational )*
+relational      ::= additive ( ( ">" | "<" | ">=" | "<=" ) additive )*
+additive        ::= multiplicative ( ( "+" | "-" ) multiplicative )*
+multiplicative  ::= unary ( ( "*" | "/" | "%" ) unary )*
+unary           ::= "-" unary | "Not" unary | postfix
+postfix         ::= primary ( "." IDENTIFIER | "[" expression "]" | "(" arg_list ")" )*
+
+primary         ::= NUMBER | STRING | INTERP_STRING | COLOR_HEX | BOOLEAN | "Null"
+                  | IDENTIFIER | "(" expression ")" | list_literal | map_literal
+                  | "Self" "." IDENTIFIER
+
+list_literal    ::= "[" arg_list "]"
+map_literal     ::= "{" ( IDENTIFIER ":" expression ( "," IDENTIFIER ":" expression )* )? ","? "}"
+
+param_list      ::= ( IDENTIFIER ( ":" IDENTIFIER )? ( "," IDENTIFIER ( ":" IDENTIFIER )? )* )?
+arg_list        ::= ( expression ( "," expression )* )?

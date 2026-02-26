@@ -1,0 +1,42 @@
+# Error Handling Example in Veltrix
+# Demonstrates Try/Catch, division by zero, and safe error handling
+
+Write "--- Try/Catch: Division by Zero ---"
+Try
+    Let result = 10 / 0
+    Write result
+Catch
+    Write "Caught error: Cannot divide by zero!"
+End
+
+Write ""
+Write "--- Try/Catch: Safe Operations ---"
+Try
+    Let x = 100 / 5
+    Write "100 / 5 = " + x
+Catch
+    Write "This should not trigger."
+End
+
+Write ""
+Write "--- Constants ---"
+Constant PI = 3.14159
+Write "PI = " + PI
+
+Try
+    PI = 99
+Catch
+    Write "Caught error: Cannot reassign a constant!"
+End
+
+Write ""
+Write "--- Type Safety ---"
+Try
+    Let nums = [1, 2, 3]
+    Write nums[10]
+Catch
+    Write "Caught error: Index out of range!"
+End
+
+Write ""
+Write "All error handling tests passed!"

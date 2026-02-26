@@ -1,0 +1,18 @@
+# Age Checker in Veltrix
+# Demonstrates variables, If/Else, and comparisons
+
+Let age = 16;
+
+If age >= 18
+    Write "You are an adult.";
+Else
+    Write "You are a minor.";
+End
+
+If age >= 13
+    If age < 18
+        Write "You are a teenager.";
+    End
+End
+
+Write "Your age is: " + age;

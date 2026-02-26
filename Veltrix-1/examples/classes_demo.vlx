@@ -1,0 +1,68 @@
+# ═══════════════════════════════════════════
+#  Veltrix Phase 2 — Classes Demo
+# ═══════════════════════════════════════════
+
+Write "=== Classes Demo ==="
+
+# ── Define a Person class ─────────────────
+Class Person
+    Function Init(name, age)
+        Self.name = name
+        Self.age = age
+    End
+
+    Function Greet()
+        Write "Hello, I am " + Self.name + " and I am " + Self.age + " years old."
+    End
+
+    Function IsAdult()
+        If Self.age >= 18
+            Return True
+        End
+        Return False
+    End
+End
+
+# ── Create instances ──────────────────────
+Let p1 = Person("Ravi", 15)
+Let p2 = Person("Alice", 22)
+
+p1.Greet()
+p2.Greet()
+
+Write "Is Ravi an adult? " + p1.IsAdult()
+Write "Is Alice an adult? " + p2.IsAdult()
+
+# ── Define a Calculator class ────────────
+Write ""
+Write "=== Calculator Class ==="
+
+Class Calculator
+    Function Init(brand)
+        Self.brand = brand
+        Self.result = 0
+    End
+
+    Function Sum(a, b)
+        Self.result = a + b
+        Return Self.result
+    End
+
+    Function Multiply(a, b)
+        Self.result = a * b
+        Return Self.result
+    End
+
+    Function GetResult()
+        Return Self.result
+    End
+End
+
+Let calc = Calculator("Veltrix Calc")
+Write "Brand: " + calc.brand
+Write "5 + 3 = " + calc.Sum(5, 3)
+Write "4 * 7 = " + calc.Multiply(4, 7)
+Write "Last result: " + calc.GetResult()
+
+Write ""
+Write "=== Classes demo complete! ==="

@@ -1,0 +1,85 @@
+# ═══════════════════════════════════════════
+#  Veltrix Phase 2 — Advanced Features Demo
+# ═══════════════════════════════════════════
+
+# ── 1. Arrow Functions ────────────────────
+Write "=== Arrow Functions ==="
+Let square = (x) => x * x
+Let add = (a, b) => a + b
+
+Write "square(5) = " + square(5)
+Write "add(3, 7) = " + add(3, 7)
+
+# ── 2. Typed Parameters ──────────────────
+Write ""
+Write "=== Typed Parameters ==="
+
+Function Multiply(a: Integer, b: Integer): Integer
+    Return a * b
+End
+
+Write "Multiply(6, 7) = " + Multiply(6, 7)
+
+# ── 3. Null Safety ────────────────────────
+Write ""
+Write "=== Null Safety ==="
+Let user = Null
+
+If user is Null
+    Write "User is Null — safe check passed!"
+End
+
+Let name = "Veltrix"
+If name is not Null
+    Write "Name is not Null: " + name
+End
+
+# ── 4. String Interpolation ──────────────
+Write ""
+Write "=== String Interpolation ==="
+Let language = "Veltrix"
+Let version = 2
+Write "Welcome to {language} version {version}!"
+Write "5 + 3 = {5 + 3}"
+
+# ── 5. Enhanced Match (Pattern Matching) ─
+Write ""
+Write "=== Enhanced Match ==="
+Let value = 5
+
+Match value
+    0
+        Write "Zero"
+    1 to 10
+        Write "Small number (1-10)"
+    Otherwise
+        Write "Large number"
+End
+
+Let day = "Friday"
+Match day
+    "Monday"
+        Write "Start of the week"
+    "Friday"
+        Write "Almost weekend!"
+    Otherwise
+        Write "Regular day"
+End
+
+# ── 6. Range Type ─────────────────────────
+Write ""
+Write "=== Range Type ==="
+For i in 1..5
+    Write "  Range value: " + i
+End
+
+# ── 7. For-Each Loop ─────────────────────
+Write ""
+Write "=== For-Each Loop ==="
+Let fruits = ["apple", "banana", "cherry"]
+For fruit in fruits
+    Write "  Fruit: " + fruit
+End
+
+Write ""
+Write "=== All advanced features working! ==="

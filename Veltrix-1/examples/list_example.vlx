@@ -1,0 +1,41 @@
+# List Example in Veltrix
+# Demonstrates lists, Add/Remove, index access, and maps
+
+Write "--- Lists ---"
+Let fruits = ["apple", "banana", "cherry"]
+Write fruits
+
+Write "First fruit: " + fruits[0]
+Write "Second fruit: " + fruits[1]
+
+Add "mango" to fruits
+Write "After adding mango: "
+Write fruits
+
+Remove "banana" from fruits
+Write "After removing banana: "
+Write fruits
+
+Write ""
+Write "--- Looping through a list ---"
+Let numbers = [10, 20, 30, 40, 50]
+Let total = 0
+For i from 0 to 4
+    total = total + numbers[i]
+End
+Write "Sum of numbers: " + total
+
+Write ""
+Write "--- Maps ---"
+Let student = {
+    name: "Ravi",
+    age: 15,
+    grade: "9th"
+}
+
+Write "Name: " + student.name
+Write "Age: " + student.age
+Write "Grade: " + student.grade
+
+student.age = 16
+Write "Updated age: " + student.age

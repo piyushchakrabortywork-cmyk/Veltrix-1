@@ -1,0 +1,183 @@
+# Full Demo — All Veltrix Features
+# This program tests every major language feature
+
+# ═══════════════════════════════════════════
+#  1. VARIABLES AND CONSTANTS
+# ═══════════════════════════════════════════
+Write "=== Variables & Constants ==="
+Let name = "Veltrix"
+Let version = 1
+Let pi_approx = 3.14
+Let isAwesome = True
+Constant LANGUAGE = "Veltrix"
+
+Write "Name: " + name
+Write "Version: " + version
+Write "Pi approx: " + pi_approx
+Write "Is awesome? " + isAwesome
+Write "Language: " + LANGUAGE
+
+# ═══════════════════════════════════════════
+#  2. ARITHMETIC
+# ═══════════════════════════════════════════
+Write ""
+Write "=== Arithmetic ==="
+Write "10 + 5 = " + (10 + 5)
+Write "10 - 5 = " + (10 - 5)
+Write "10 * 5 = " + (10 * 5)
+Write "10 / 3 = " + (10 / 3)
+Write "10 % 3 = " + (10 % 3)
+
+# ═══════════════════════════════════════════
+#  3. IF / ELSE
+# ═══════════════════════════════════════════
+Write ""
+Write "=== If / Else ==="
+Let score = 85
+
+If score >= 90
+    Write "Grade: A"
+Else
+    If score >= 80
+        Write "Grade: B"
+    Else
+        If score >= 70
+            Write "Grade: C"
+        Else
+            Write "Grade: F"
+        End
+    End
+End
+
+# ═══════════════════════════════════════════
+#  4. FOR LOOP
+# ═══════════════════════════════════════════
+Write ""
+Write "=== For Loop ==="
+For i from 1 to 5
+    Write "  Iteration: " + i
+End
+
+# ═══════════════════════════════════════════
+#  5. WHILE LOOP
+# ═══════════════════════════════════════════
+Write ""
+Write "=== While Loop ==="
+Let count = 3
+While count > 0
+    Write "  Countdown: " + count
+    count = count - 1
+End
+Write "  Go!"
+
+# ═══════════════════════════════════════════
+#  6. FUNCTIONS
+# ═══════════════════════════════════════════
+Write ""
+Write "=== Functions ==="
+
+Function Greet(person)
+    Return "Hello, " + person + "!"
+End
+
+Function Square(n)
+    Return n * n
+End
+
+Function Max(a, b)
+    If a > b
+        Return a
+    End
+    Return b
+End
+
+Write Greet("Ravi")
+Write "Square of 7: " + Square(7)
+Write "Max of 15 and 22: " + Max(15, 22)
+
+# ═══════════════════════════════════════════
+#  7. LISTS
+# ═══════════════════════════════════════════
+Write ""
+Write "=== Lists ==="
+Let colors = ["red", "green", "blue"]
+Write "Colors: "
+Write colors
+Add "yellow" to colors
+Write "After adding yellow: "
+Write colors
+Remove "green" from colors
+Write "After removing green: "
+Write colors
+Write "First color: " + colors[0]
+
+# ═══════════════════════════════════════════
+#  8. MAPS
+# ═══════════════════════════════════════════
+Write ""
+Write "=== Maps ==="
+Let car = {
+    brand: "Tesla",
+    model: "Model S",
+    year: 2024
+}
+Write "Brand: " + car.brand
+Write "Model: " + car.model
+Write "Year: " + car.year
+
+# ═══════════════════════════════════════════
+#  9. MATCH STATEMENT
+# ═══════════════════════════════════════════
+Write ""
+Write "=== Match Statement ==="
+Let day = "Monday"
+
+Match day
+    "Monday"
+        Write "Start of the week"
+    "Friday"
+        Write "Almost weekend!"
+    "Sunday"
+        Write "Holiday!"
+    Otherwise
+        Write "Regular day"
+End
+
+# ═══════════════════════════════════════════
+#  10. TRY / CATCH
+# ═══════════════════════════════════════════
+Write ""
+Write "=== Try / Catch ==="
+Try
+    Let bad = 1 / 0
+Catch
+    Write "Safely caught division by zero!"
+End
+
+# ═══════════════════════════════════════════
+#  11. MATH BUILT-IN
+# ═══════════════════════════════════════════
+Write ""
+Write "=== Math Built-in ==="
+Write "sqrt(64) = " + Math.sqrt(64)
+Write "power(3, 4) = " + Math.power(3, 4)
+Write "abs(-42) = " + Math.abs(-42)
+Write "floor(3.7) = " + Math.floor(3.7)
+Write "ceil(3.2) = " + Math.ceil(3.2)
+Write "pi = " + Math.pi
+
+# ═══════════════════════════════════════════
+#  12. BOOLEAN LOGIC
+# ═══════════════════════════════════════════
+Write ""
+Write "=== Boolean Logic ==="
+Let a = True
+Let b = False
+Write "True And False = " + (a And b)
+Write "True Or False = " + (a Or b)
+Write "Not True = " + (Not a)
+
+# ═══════════════════════════════════════════
+Write ""
+Write "=== All tests passed! ==="
+Write "Veltrix is working perfectly!"

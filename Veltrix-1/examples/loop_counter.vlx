@@ -1,0 +1,30 @@
+# Loop Counter in Veltrix
+# Demonstrates For and While loops
+
+Write "--- For Loop (1 to 5) ---"
+For i from 1 to 5
+    Write "Count: " + i
+End
+
+Write ""
+Write "--- For Loop with Step (1 to 10, step 2) ---"
+For i from 1 to 10 step 2
+    Write "Odd number: " + i
+End
+
+Write ""
+Write "--- While Loop ---"
+Let counter = 1
+While counter <= 5
+    Write "While count: " + counter
+    counter = counter + 1
+End
+
+Write ""
+Write "--- Countdown ---"
+Let n = 5
+While n > 0
+    Write n
+    n = n - 1
+End
+Write "Blast off!"

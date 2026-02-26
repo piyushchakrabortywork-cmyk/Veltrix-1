@@ -1,0 +1,6 @@
+window "App" {
+    width: 800,
+    height: 600,
+    bg: #111111,
+};
+Write "Hello";

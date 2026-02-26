@@ -1,0 +1,8 @@
+# Hello World in Veltrix
+# The simplest Veltrix program
+
+Write "Hello, World!"
+Write "Welcome to Veltrix!"
+
+Let name = "Ravi"
+Write "Hello, " + name + "!"

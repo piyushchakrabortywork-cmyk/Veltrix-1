@@ -1,0 +1,58 @@
+# Veltrix Styling Engine Demo
+# Demonstrates inline styling, block styling, gradients, and backgrounds.
+
+Write "--- Veltrix Styling Engine Demo ---";
+Write "";
+
+# 1. Basic inline styles
+Write "1. Basic Inline Styles";
+Write bold "This text is bold.";
+Write italic "This text is italic.";
+Write underline "This text is underlined.";
+Write strike "This text has a strikethrough.";
+Write "";
+
+# 2. Color styling (Hex and Named)
+Write "2. Color Styling";
+Write color "#ff0000" "This text is red using hex (#ff0000).";
+Write color "#00ff00" "This text is green using hex (#00ff00).";
+Write color "#0000ff" "This text is blue using hex (#0000ff).";
+Write "";
+
+# 3. Background styling
+Write "3. Background Styling";
+Write bg "#ffff00" "This text has a yellow background.";
+Write bg "#ff00ff" (color "#ffffff" "White text on magenta background.");
+Write "";
+
+# 4. Block Styles (Combined Properties)
+Write "4. Block Styles";
+Let warningStyle = style {
+    color: "#ff8800",
+    bold: True,
+    underline: True
+};
+
+Write warningStyle "This is a warning block style!";
+
+Let errorStyle = style {
+    color: "#ffffff",
+    bg: "#ff0000",
+    bold: True
+};
+
+Write errorStyle "This is an ERROR block style!";
+Write "";
+
+# 5. Gradients
+Write "5. Gradients";
+Write gradient "#ff0000" -> "#0000ff" "This is a beautiful red to blue gradient!";
+Write gradient "#00ff00" -> "#ffff00" "This is a green to yellow gradient!";
+Write "";
+
+# 6. Validation Error Example (uncomment to test)
+# Write "6. Validation Errors";
+# Write color "not-a-color" "This will crash the VM.";
+# Write opacity 2.5 "This will also crash.";
+
+Write "--- Demo Complete ---";

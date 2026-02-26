@@ -1,0 +1,70 @@
+// Veltrix Interactive Example App
+window "Interactive UI Demo" {
+    width: 800,
+    height: 600,
+    bg: "#f0f0f0",
+};
+
+let counter = 0;
+
+vstack {
+    spacing: 20,
+    align: "center",
+    x: 200,
+    y: 50,
+    width: 400,
+
+    button "Click Me!" {
+        width: 150,
+        height: 40,
+        color: "#4CAF50",
+        text_color: "white",
+        onClick {
+            counter = counter + 1;
+            print "Button Clicked! Counter: " + counter;
+        },
+    };
+
+    input "Type here..." {
+        width: 250,
+        height: 30,
+        onChange {
+            print "Input changed!";
+        },
+    };
+
+    hstack {
+        spacing: 15,
+        align: "center",
+        width: 300,
+        
+        checkbox "Enable features" {
+            width: 150,
+            onChange {
+                print "Checkbox toggled!";
+            },
+        };
+        
+        button "Reset" {
+            width: 100,
+            height: 30,
+            color: "#f44336",
+            text_color: "white",
+            onClick {
+                counter = 0;
+                print "Counter reset!";
+            },
+        };
+    };
+    
+    dropdown "Select an option" {
+        width: 200,
+        height: 30,
+        options: ["Option 1", "Option 2", "Option 3"],
+        onChange {
+            print "Dropdown changed!";
+        },
+    };
+};
+
+show window;

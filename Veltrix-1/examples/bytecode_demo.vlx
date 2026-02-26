@@ -1,0 +1,33 @@
+# ═══════════════════════════════════════════
+#  Veltrix Phase 2 — Bytecode Demo
+#  Use this file to test compile + run flow
+# ═══════════════════════════════════════════
+
+Write "=== Bytecode Demo ==="
+
+# Simple arithmetic
+Let x = 10
+Let y = 25
+Write "x + y = " + (x + y)
+Write "x * y = " + (x * y)
+
+# Function
+Function Factorial(n)
+    If n <= 1
+        Return 1
+    End
+    Return n * Factorial(n - 1)
+End
+
+Write "Factorial(5) = " + Factorial(5)
+Write "Factorial(8) = " + Factorial(8)
+
+# Loop
+Let sum = 0
+For i from 1 to 10
+    sum = sum + i
+End
+Write "Sum of 1..10 = " + sum
+
+Write ""
+Write "=== Bytecode demo complete! ==="

@@ -1,0 +1,46 @@
+# Function Calculator in Veltrix
+# Demonstrates functions, parameters, return values, and Math
+
+Function Sum(a, b)
+    Return a + b
+End
+
+Function Subtract(a, b)
+    Return a - b
+End
+
+Function Multiply(a, b)
+    Return a * b
+End
+
+Function Divide(a, b)
+    If b == 0
+        Write "Error: Cannot divide by zero!"
+        Return 0
+    End
+    Return a / b
+End
+
+Function Factorial(n)
+    If n <= 1
+        Return 1
+    End
+    Return n * Factorial(n - 1)
+End
+
+Write "--- Calculator ---"
+Write "5 + 3 = " + Sum(5, 3)
+Write "10 - 4 = " + Subtract(10, 4)
+Write "6 * 7 = " + Multiply(6, 7)
+Write "20 / 4 = " + Divide(20, 4)
+
+Write ""
+Write "--- Factorial ---"
+Write "5! = " + Factorial(5)
+Write "8! = " + Factorial(8)
+
+Write ""
+Write "--- Math Built-in ---"
+Write "sqrt(144) = " + Math.sqrt(144)
+Write "power(2, 10) = " + Math.power(2, 10)
+Write "pi = " + Math.pi
